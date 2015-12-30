@@ -12,6 +12,16 @@ layout: default
 	</style>
 </noscript>
 
+<aside class="logo">
+  
+  	<a href="">
+		 <img src="{{site.baseurl}}/assets/images/{{ page.avatar_img | default: 'avatar_default' }}.png" class="gravatar">
+	</a>
+	<span class="logo-prompt">{{ page.avatar_desc | default: page.title }}</span>
+
+</aside>
+
+
 <article>
 
 	<div class="center">
@@ -26,5 +36,7 @@ layout: default
 </article>
 
 <div class="back">
-	<a href="{{site.baseurl}}/">Back</a>
+  <a href="{{site.baseurl}}/">
+	<!--img src="{{site.baseurl}}/assets/triangle-grey.png"-->
+  </a>
 </div>

@@ -1,16 +1,30 @@
+{% comment %}
+
 <aside class="logo">
 
-	{% if page.url == '/index.html' or page.url == '/' %}
-		{% assign link = '/about' %}
-		{% assign prompt = 'About the Author' %}
-	{% else %}
-		{% assign link = '/' %}
-		{% assign prompt = 'Back to Home' %}
-	{% endif %}
 
-	<a href="{{ link | prepend: site.baseurl }}">
-		<img src="http://www.gravatar.com/avatar/{{ site.author_gravatar }}.png?s=80" class="gravatar">
+	  {% if page.url == '/index.html' or page.url == '/' %}
+	     {% assign link = {{site.baseurl | append: '/about'}} %}
+	     {% assign prompt = 'About the Author' %}
+	     {% assign img = 'avatar.jpg'%}
+	  
+      {% elsif page.path contains '_posts' %}	 
+		 {% assign link = '' %}
+	     {% assign prompt = 'Redesigned Emacs Icon' %}
+		 {% assign img = {{page.path | remove: '_posts/' | remove: '.md' | prepend: 'images/' | append: '.png'}} %}
+		 
+	  {% else %}
+	     {% assign link = {{site.baseurl | append: '/'}} %}
+	     {% assign prompt = 'Back to Home' %}
+	     {% assign img = 'avatar.jpg'%}
+	  
+	  {% endif %}
+	  
+  	<a href="{{ link }}">
+		 <img src="{{site.baseurl}}/assets/{{img}}" class="gravatar">
 	</a>
 	<span class="logo-prompt">{{ prompt }}</span>
 
 </aside>
+
+{% endcomment %}

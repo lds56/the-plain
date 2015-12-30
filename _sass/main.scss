@@ -55,13 +55,13 @@ span[data-note] {
   -webkit-transition: background 0.3s;
   -webkit-user-select: none;
   &.open {
-    background: #838383;
+    background: #B9C46A;
   }
   @media (min-width: 768px) {
     vertical-align: 1px;
   }
   @media (min-width: 992px) {&:hover {
-      background: #838383;
+      background: #B9C46A;
     }
   }
 }
@@ -132,7 +132,7 @@ span[data-note] {
     box-sizing: border-box;
     &:hover,
     &:focus {
-      background: #f14e32;
+      background: #B9C46A;
     }
     &:hover + .logo-prompt,
     &:focus + .logo-prompt {
@@ -143,6 +143,7 @@ span[data-note] {
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%;
+	  max-width: 89%;
     }
     @media (max-width : 480px) {&:hover + .logo-prompt,
       &:focus + .logo-prompt {
@@ -207,7 +208,7 @@ pre {
   font-family: Consolas, monospace, x;
 }
 code {
-  color: #f14e32;
+  color: #B9C46A;
   background: #eee;
   padding: 2px 6px;
   font-size: 13px;
@@ -297,10 +298,19 @@ article {
     display: inline-block;
     padding: 10px;
     border: 0;
+	width: 8px;
+	height: 12px;
     &:before {
-      content: "<<";
       margin-right: 5px;
       color: #000;
+    }
+	background-repeat:no-repeat;
+	background-position: center center;
+	background-size: 100%;
+	background-image: url('triangle-grey.png');
+	&:hover,
+    &:focus {
+      background-image: url('triangle.png');
     }
   }
 }
