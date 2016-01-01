@@ -1,6 +1,7 @@
 ---
 title: Lorem Ipsum
 updated: 2015-09-06 15:59
+tags: tag3
 ---
 
 ### The standard Lorem Ipsum passage, used since the 1500s
