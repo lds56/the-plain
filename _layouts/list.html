@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+
+<aside class="logo">
+  
+  	<a href="{{ site.baseurl }}/about">
+		 <img src="{{site.baseurl}}/assets/avatars/{{ page.type }}/avatar.png" class="gravatar">
+	</a>
+	<span class="logo-prompt">{{ page.val }}</span>
+
+</aside>
+
+
+<section>
+	<ul>
+
+	  {% for post in site.posts %}
+	      {% unless page.type == 'index' or page.type == 'tag' and post.tags contains page.val %}
+	      {% continue %}
+	      {% endunless %}
+
+		<li>
+			<div class="post-date">
+				<span>{{ post.date | date: "%b %d, %Y" }}</span>
+			</div>
+			<div class="title">
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</div>
+		</li>
+
+		{% endfor %}
+
+	</ul>
+</section>
+
+{% unless page.type == 'index'  %}
+<div class="back">
+  <a href="{{site.baseurl}}/">
+  </a>
+</div>
+{% endunless %}
