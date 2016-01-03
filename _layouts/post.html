@@ -36,8 +36,11 @@ layout: default
 		<time>{{ page.date | date: '%B %-d, %Y' }}</time>
 
 		<div>
+		  <a href="{{ site.baseurl }}/categories/{{ page.category }}" class="category">
+			{{ page.category }}
+		  </a>
 		  {% for tag in page.tags  %}
-		  <a href="{{ site.base_url }}/tags/{{ tag }}" class="tag">{{ tag }}</a>
+		  <a href="{{ site.baseurl }}/tags/{{ tag }}" class="tag">{{ tag }}</a>
 		  {% endfor %}
 		</div>
 

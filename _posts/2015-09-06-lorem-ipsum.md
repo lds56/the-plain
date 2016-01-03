@@ -2,6 +2,7 @@
 title: Lorem Ipsum
 updated: 2015-09-06 15:59
 tags: [tag1, tag3]
+category: other
 ---
 
 ### The standard Lorem Ipsum passage, used since the 1500s

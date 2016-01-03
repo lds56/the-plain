@@ -4,23 +4,44 @@ layout: default
 
 
 <aside class="logo">
+
+  {% if page.type == 'index' %}
+     {% assign link = site.baseurl | append: '/about' %}
+     {% assign style = '' %}
+  {% else %}
+     {% assign link = '' %}
+     {% assign style = 'display: inline-block' %}
+  {% endif %}
   
-  	<a href="{{ site.baseurl }}/about">
+  	<a href="{{ link }}">
 		 <img src="{{site.baseurl}}/assets/avatars/{{ page.type }}/avatar.png" class="gravatar">
 	</a>
-	<span class="logo-prompt">{{ page.val }}</span>
+	<span class="logo-prompt" style="{{ style }}">{{ page.val }}</span>
 
 </aside>
 
 
 <section>
+
+
+  <div class="divider"></div>
+
 	<ul>
 
-	  {% for post in site.posts %}
-	      {% unless page.type == 'index' or page.type == 'tag' and post.tags contains page.val %}
-	      {% continue %}
-	      {% endunless %}
+	{% for post in site.posts %}
+	
+	   {% unless page.type == 'index' %}
+	
+           {% unless page.type == 'tag' and post.tags contains page.val%}
 
+	           {% unless page.type == 'category' and post.category == page.val %}
+            	    {% continue %}
+               {% endunless %}
+ 
+	       {% endunless %}
+
+	   {% endunless %}
+	
 		<li>
 			<div class="post-date">
 				<span>{{ post.date | date: "%b %d, %Y" }}</span>

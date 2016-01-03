@@ -4,7 +4,7 @@
 
 
 	  {% if page.url == '/index.html' or page.url == '/' %}
-	     {% assign link = {{site.baseurl | append: '/about'}} %}
+	     {% assign link = site.baseurl | append: '/about' %}
 	     {% assign prompt = 'About the Author' %}
 	     {% assign img = 'avatar.jpg'%}
 	  

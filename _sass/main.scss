@@ -318,6 +318,18 @@ article {
 section {
   max-width: 500px;
   margin: 0 auto;
+  .divider {
+    background: #ddd;
+    background: -webkit-gradient(linear,left top,right top,from(rgba(255,255,255,0)),color-stop(#ccc),to(rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+    background: linear-gradient(to right,rgba(255,255,255,0),#ccc,rgba(255,255,255,0));
+    height: 1px;
+    margin: 2em 0;
+  }
+  .center {
+    text-align: center;
+    margin: 0 auto;
+  }
   ul {
     list-style: none;
     margin: 0;
@@ -431,6 +443,48 @@ a.tag {
 	color: white;
 	&:after{
 	   border-left-color: #B9C46A;
+	}
+  }
+}
+
+a.category {
+    border-bottom: 0px;
+}
+.category {
+  background: #eee;
+  border-radius: 3px;
+  color: #999;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 23px;
+  position: relative;
+  margin: 20px 15px 0px 7px;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  &:before {
+    background: #fff;
+  	border-radius: 10px;
+	box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+	content: '';
+    height: 6px;
+    left: 10px;
+    position: absolute;
+    width: 6px;
+    top: 10px;  
+  }
+  &:after {
+    background: #fff;
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;  
+  }
+  &:hover {
+    background-color: #65745D;	
+	color: white;
+	&:after{
+	   border-left-color: #65745D;
 	}
   }
 }

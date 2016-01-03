@@ -11,8 +11,10 @@ layout: compress
 
 	<body>
 
+	  {% comment %}
 		{% include header.html %}
-
+	  {% endcomment %}
+	  
 		<main>
 			{{ content | replace: '&#8617;', '&#8617;&#xfe0e;' }}
 		</main>

@@ -1,9 +1,8 @@
 ---
 title: Download this Theme
 updated: 2015-09-09 10:38
-avatar_img: avatar_download
-avatar_desc: Download
 tags: [tag1, tag2]
+category: manual
 ---
 
 This is a minimalist Jekyll theme built to focus on writing stuffs that matter. Suitable to be used as a personal blog!
